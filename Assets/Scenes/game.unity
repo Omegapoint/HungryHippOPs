@@ -845,10 +845,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1110522670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cded47ba17c3ad36bb273713a807d7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4102a56695eb64bb39c7014e49c8f43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  Speed: 5
+  HeadTravelDistance: 20
 --- !u!1 &1274635060 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7098721166002269313, guid: f3d8a38e571f2c0778ac4e1bf05059c6, type: 3}
