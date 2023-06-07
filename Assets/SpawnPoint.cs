@@ -32,13 +32,4 @@ public class SpawnPoint : MonoBehaviour
         yield return new WaitForSeconds(spawnInterval);
         StartCoroutine(SpawnPointsWithInterval());
     }
-
-    // Update is called once per frame
-    // void Update()
-    // {
-    //     if (Random.Range(0, 1000) == 5)
-    //     {
-    //         SpawnRandomPoint();
-    //     }
-    // }
 }
