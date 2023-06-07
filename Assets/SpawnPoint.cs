@@ -1,27 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnPoint : MonoBehaviour
 {
     public GameObject objectToSpawn;
-    public Vector3 origin = new Vector3(0, 1f, 0); // Vector3.zero;
-    public float radius = 10;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        var randomPosition = origin; //+ Random.insideUnitSphere * radius;
+        SpawnRandomPoint();
+    }
 
-        Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
-        Debug.Log("================= " + objectToSpawn.transform.position);
-        randomPosition.y = 0.5f;
-        randomPosition.x += 10f;
+    void SpawnRandomPoint()
+    {
+        var randomPoint = Random.insideUnitCircle.normalized * 23.5f;
+        var randomPosition = new Vector3(randomPoint.x, 1.0f, randomPoint.y); // + Random.insideUnitSphere * radius;
+        var go = Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
+        go.GetComponent<Rigidbody>().velocity = -randomPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Random.Range(0, 1000) == 5)
+        {
+            SpawnRandomPoint();
+        }
     }
 }
