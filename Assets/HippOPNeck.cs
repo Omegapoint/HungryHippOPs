@@ -1,10 +1,9 @@
 using UnityEngine;
 
-public class HippOPHead : MonoBehaviour
+public class HippOPNeck : MonoBehaviour
 {
 
     private Vector3 _originalPos;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +16,13 @@ public class HippOPHead : MonoBehaviour
         var offset = transform.position - _originalPos;
 
         if(Input.GetKey(KeyCode.Space)) {
-            transform.position += (Vector3.forward * (Constants.HippOPSpeed * Time.deltaTime));
+            transform.localScale += (Vector3.up * (Constants.HippOPSpeed/2f * Time.deltaTime));
+            transform.position +=  (Vector3.forward * (Constants.HippOPSpeed/2f * Time.deltaTime));
         }
         else if (Vector3.Dot(Vector3.forward , offset) > 0)
         {
-            transform.position -= (Vector3.forward * (Constants.HippOPSpeed * Time.deltaTime));
+            transform.localScale -= (Vector3.up * (Constants.HippOPSpeed/2f * Time.deltaTime));
+            transform.position -=  (Vector3.forward * (Constants.HippOPSpeed/2f * Time.deltaTime));
         } 
     }
-
-
 }
