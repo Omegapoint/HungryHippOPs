@@ -1,14 +1,19 @@
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class SpawnPoint : MonoBehaviour
 {
     public GameObject objectToSpawn;
+    public float startDelay = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnRandomPoint();
+        StartCoroutine(SpawnPointsWithInterval());
+        StartCoroutine(SpawnPointsWithInterval());
+        StartCoroutine(SpawnPointsWithInterval());
+        StartCoroutine(SpawnPointsWithInterval());
     }
 
     void SpawnRandomPoint()
@@ -19,12 +24,21 @@ public class SpawnPoint : MonoBehaviour
         go.GetComponent<Rigidbody>().velocity = -randomPosition;
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator SpawnPointsWithInterval()
     {
-        if (Random.Range(0, 1000) == 5)
-        {
-            SpawnRandomPoint();
-        }
+        SpawnRandomPoint();
+        var spawnInterval = Random.Range(0.1f, 3f);
+
+        yield return new WaitForSeconds(spawnInterval);
+        StartCoroutine(SpawnPointsWithInterval());
     }
+
+    // Update is called once per frame
+    // void Update()
+    // {
+    //     if (Random.Range(0, 1000) == 5)
+    //     {
+    //         SpawnRandomPoint();
+    //     }
+    // }
 }
