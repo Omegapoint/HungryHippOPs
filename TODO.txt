@@ -1,0 +1,15 @@
+Skybox
+
+Start och slut på spelet
+
+Dynamisk kamera
+
+Räkna poäng
+
+Timer som tar slut på spelet
+
+Intrologga
+
+Snyggt material för kulan (polerad?)
+
+Snygg hippOP (doughnut?)
