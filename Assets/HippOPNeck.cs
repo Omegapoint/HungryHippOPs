@@ -16,12 +16,12 @@ public class HippOPNeck : MonoBehaviour
         var offset = transform.position - _originalPos;
 
         if(Input.GetKey(KeyCode.Space)) {
-            transform.localScale += (Vector3.down * (Constants.HippOPSpeed/2f * Time.deltaTime));
+            transform.localScale += (Vector3.up * (Constants.HippOPSpeed/2f * Time.deltaTime));
             transform.position +=  (Vector3.forward * (Constants.HippOPSpeed/2f * Time.deltaTime));
         }
         else if (Vector3.Dot(Vector3.forward , offset) > 0)
         {
-            transform.localScale -= (Vector3.down * (Constants.HippOPSpeed/2f * Time.deltaTime));
+            transform.localScale -= (Vector3.up * (Constants.HippOPSpeed/2f * Time.deltaTime));
             transform.position -=  (Vector3.forward * (Constants.HippOPSpeed/2f * Time.deltaTime));
         } 
     }
