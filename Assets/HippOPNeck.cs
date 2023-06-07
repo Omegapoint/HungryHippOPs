@@ -3,26 +3,22 @@ using UnityEngine;
 public class HippOPNeck : MonoBehaviour
 {
 
+    public HippOPHead head;
     private Vector3 _originalPos;
+    private Vector3 _originalScale;
+
     // Start is called before the first frame update
     void Start()
     {
         _originalPos = transform.position.CopyVector();
+        _originalScale = transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
-        var offset = transform.position - _originalPos;
-
-        if(Input.GetKey(KeyCode.Space)) {
-            transform.localScale += (Vector3.up * (Constants.HippOPSpeed/2f * Time.deltaTime));
-            transform.position +=  (Vector3.forward * (Constants.HippOPSpeed/2f * Time.deltaTime));
-        }
-        else if (Vector3.Dot(Vector3.forward , offset) > 0)
-        {
-            transform.localScale -= (Vector3.up * (Constants.HippOPSpeed/2f * Time.deltaTime));
-            transform.position -=  (Vector3.forward * (Constants.HippOPSpeed/2f * Time.deltaTime));
-        } 
+        var offset = head.transform.position - _originalPos;
+        transform.localScale = _originalScale + (Vector3.up * offset.magnitude / 2) ;
+        transform.position = _originalPos + (offset / 2);
     }
 }
