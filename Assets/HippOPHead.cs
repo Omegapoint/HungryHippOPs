@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class HippOPHead : MonoBehaviour
 {
-
+    
     private Vector3 _originalPos;
-    private float offsetMagnitude = 0;
+    public float offsetMagnitude = 0;
 
 
     // Start is called before the first frame update
