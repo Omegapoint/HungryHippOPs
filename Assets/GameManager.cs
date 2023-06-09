@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private const float SECONDS_OF_A_ROUND = 10;
     private float secondsLeft = 0;
 
     public float SecondsLeft => secondsLeft;
@@ -10,7 +9,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        secondsLeft = SECONDS_OF_A_ROUND;
+        secondsLeft = Constants.SECONDS_OF_A_ROUND;
     }
 
     // Update is called once per frame

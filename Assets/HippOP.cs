@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 
 public class HippOP : MonoBehaviour
 {
+    public int playerIndex;
     private float angleOffset = 0;
 
     private Vector3 originalForward;
@@ -18,14 +19,18 @@ public class HippOP : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            angleOffset += 30 * Time.deltaTime;
+            angleOffset -= Constants.PLAYER_ROTATION_SPEED_DEGREES_PER_SECOND * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            angleOffset -= 30 * Time.deltaTime;
+            angleOffset += Constants.PLAYER_ROTATION_SPEED_DEGREES_PER_SECOND * Time.deltaTime;
         }
 
-        angleOffset = Mathf.Clamp(angleOffset, -30, 30);
+        angleOffset = Mathf.Clamp(angleOffset, -Constants.PLAYER_ROTATION_DEGREES_MAX, Constants.PLAYER_ROTATION_DEGREES_MAX);
         transform.forward = Quaternion.Euler(new Vector3(0, angleOffset, 0)) * originalForward;
+    }
+
+    public void IncrementScore() {
+        ScoreKeeper.IncrementScoreForPlayer(playerIndex);
     }
 }

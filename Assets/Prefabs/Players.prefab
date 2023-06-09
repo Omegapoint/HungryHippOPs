@@ -303,6 +303,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 329063046170521062}
     m_Modifications:
+    - target: {fileID: -1394037693313064243, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
+      propertyPath: playerIndex
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1362168962319510536, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
       propertyPath: m_Name
       value: HippOP
@@ -369,6 +373,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7784325155842598185}
     m_Modifications:
+    - target: {fileID: -1394037693313064243, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
+      propertyPath: playerIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1362168962319510536, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
       propertyPath: m_Name
       value: HippOP
@@ -435,6 +443,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7561175359801772392}
     m_Modifications:
+    - target: {fileID: -1394037693313064243, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
+      propertyPath: playerIndex
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1362168962319510536, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
       propertyPath: m_Name
       value: HippOP
@@ -567,6 +579,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6294394391893260271}
     m_Modifications:
+    - target: {fileID: -1394037693313064243, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
+      propertyPath: playerIndex
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1362168962319510536, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
       propertyPath: m_Name
       value: HippOP
@@ -633,6 +649,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3576221706171808161}
     m_Modifications:
+    - target: {fileID: -1394037693313064243, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
+      propertyPath: playerIndex
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1362168962319510536, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
       propertyPath: m_Name
       value: HippOP
@@ -699,6 +719,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7966360651610747469}
     m_Modifications:
+    - target: {fileID: -1394037693313064243, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
+      propertyPath: playerIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1362168962319510536, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
       propertyPath: m_Name
       value: HippOP
@@ -765,6 +789,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8672896929942515493}
     m_Modifications:
+    - target: {fileID: -1394037693313064243, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
+      propertyPath: playerIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1362168962319510536, guid: 4abf92d7ab71e4564937f5e3856b92e8, type: 3}
       propertyPath: m_Name
       value: HippOP

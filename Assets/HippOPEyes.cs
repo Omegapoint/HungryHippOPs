@@ -15,6 +15,6 @@ public class HippOPEyes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = _originalPos + transform.forward * head.offsetMagnitude;
+        transform.position = _originalPos + transform.forward * head.OffsetMagnitude;
     }
 }
