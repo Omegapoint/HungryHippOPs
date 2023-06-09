@@ -12,6 +12,7 @@ public class HippOPHead : MonoBehaviour
     private Collider _collider;
     private bool movingInwards = false;
     private List<GameObject> collectedPoints = new List<GameObject>();
+    private Controlmap _controlmap;
 
 
 
@@ -20,11 +21,12 @@ public class HippOPHead : MonoBehaviour
         hippOP = transform.GetComponentInParent<HippOP>();
         _originalPos = transform.position.CopyVector();
         _collider = GetComponent<Collider>();
+        _controlmap = GetComponentInParent<Controlmap>();
     }
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space) && offsetMagnitude < Constants.PLAYER_EXTENSION_MAX && (movingInwards || offsetMagnitude == 0)) {
+        if(_controlmap.CenterKeyPressed && offsetMagnitude < Constants.PLAYER_EXTENSION_MAX && (movingInwards || offsetMagnitude == 0)) {
             movingInwards = true;
             offsetMagnitude += Constants.HippOPSpeed * Time.deltaTime;
             _collider.enabled = false;

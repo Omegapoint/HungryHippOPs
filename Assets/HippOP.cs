@@ -7,21 +7,23 @@ public class HippOP : MonoBehaviour
     private float angleOffset = 0;
 
     private Vector3 originalForward;
+    private Controlmap _controlmap;
 
     // Start is called before the first frame update
     void Start()
     {
         originalForward = transform.forward;
+        _controlmap = GetComponent<Controlmap>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (_controlmap.LeftKeyPressed)
         {
             angleOffset -= Constants.PLAYER_ROTATION_SPEED_DEGREES_PER_SECOND * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (_controlmap.RightKeyPressed)
         {
             angleOffset += Constants.PLAYER_ROTATION_SPEED_DEGREES_PER_SECOND * Time.deltaTime;
         }

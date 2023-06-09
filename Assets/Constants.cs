@@ -9,4 +9,5 @@ public class Constants
     public static readonly float PLAYER_EXTENSION_MAX = 35;
     public static readonly float POINT_FORCE_TOWARDS_CENTER = 5;
     public static readonly float POINT_INITIAL_SPEED_MAGNITUDE = 40;
+
 }
