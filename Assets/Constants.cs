@@ -1,4 +1,4 @@
 public class Constants
 {
-    public static readonly float HippOPSpeed = 5;
+    public static readonly float HippOPSpeed = 20;
 }
