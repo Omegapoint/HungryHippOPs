@@ -21,7 +21,10 @@ public class SpawnPoint : MonoBehaviour
         var randomPoint = Random.insideUnitCircle.normalized * 23.5f;
         var randomPosition = new Vector3(randomPoint.x, 1.0f, randomPoint.y); // + Random.insideUnitSphere * radius;
         var go = Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
-        go.GetComponent<Rigidbody>().velocity = -randomPosition.normalized * Constants.POINT_INITIAL_SPEED_MAGNITUDE;
+        Vector3 velocityTowardsCenter = -randomPosition.normalized * Constants.POINT_INITIAL_SPEED_MAGNITUDE;
+        float randomAngleOffset = Random.Range(-Constants.POINT_INITIAL_ANGLE_OFFSET_MAX, Constants.POINT_INITIAL_ANGLE_OFFSET_MAX);
+        Vector3 velocityRotatedRandomly = Quaternion.Euler(0, randomAngleOffset, 0) * velocityTowardsCenter;
+        go.GetComponent<Rigidbody>().velocity = velocityRotatedRandomly;
     }
 
     IEnumerator SpawnPointsWithInterval()

@@ -4,59 +4,70 @@ using UnityEngine;
 public class HippOPHead : MonoBehaviour
 {
 
-    public float OffsetMagnitude => offsetMagnitude; 
+  public float OffsetMagnitude => offsetMagnitude;
 
-    private HippOP hippOP;
-    private Vector3 _originalPos;
-    private float offsetMagnitude = 0;
-    private Collider _collider;
-    private bool movingInwards = false;
-    private List<GameObject> collectedPoints = new List<GameObject>();
-    private Controlmap _controlmap;
+  private HippOP hippOP;
+  private Vector3 _originalPos;
+  private float offsetMagnitude = 0;
+  private Collider _collider;
+  private bool movingInwards = false;
+  private List<GameObject> collectedPoints = new List<GameObject>();
+  private Controlmap _controlmap;
 
 
 
-    void Start()
+  void Start()
+  {
+    hippOP = transform.GetComponentInParent<HippOP>();
+    _originalPos = transform.position.CopyVector();
+    _collider = GetComponent<Collider>();
+    _controlmap = GetComponentInParent<Controlmap>();
+  }
+
+  void Update()
+  {
+    if (_controlmap.CenterKeyPressed && offsetMagnitude < Constants.PLAYER_EXTENSION_MAX && (movingInwards || offsetMagnitude == 0))
     {
-        hippOP = transform.GetComponentInParent<HippOP>();
-        _originalPos = transform.position.CopyVector();
-        _collider = GetComponent<Collider>();
-        _controlmap = GetComponentInParent<Controlmap>();
+      movingInwards = true;
+      offsetMagnitude += Constants.HippOPSpeed * Time.deltaTime;
+      _collider.enabled = false;
     }
-
-    void Update()
+    else if (offsetMagnitude > 0)
     {
-        if(_controlmap.CenterKeyPressed && offsetMagnitude < Constants.PLAYER_EXTENSION_MAX && (movingInwards || offsetMagnitude == 0)) {
-            movingInwards = true;
-            offsetMagnitude += Constants.HippOPSpeed * Time.deltaTime;
-            _collider.enabled = false;
-        }
-        else if (offsetMagnitude > 0)
+      movingInwards = false;
+      offsetMagnitude -= Constants.HippOPSpeed * Time.deltaTime;
+      _collider.enabled = true; // Only enable trigger on way back to eat stuff only on way back
+      if (offsetMagnitude < 0)
+      {
+        offsetMagnitude = 0;
+      }
+    }
+    else
+    {
+      if (collectedPoints.Count > 0)
+      {
+        foreach (GameObject point in collectedPoints)
         {
-            movingInwards = false;
-            offsetMagnitude -= Constants.HippOPSpeed * Time.deltaTime;
-            _collider.enabled = true; // Only enable trigger on way back to eat stuff only on way back
-        } else {
-            if (collectedPoints.Count > 0) {
-                foreach(GameObject point in collectedPoints) {
-                    hippOP.IncrementScore();
-                    Destroy(point);
-                }
-            }
-            collectedPoints.Clear();
-            offsetMagnitude = 0;
-            _collider.enabled = false;
+          hippOP.IncrementScore();
+          Destroy(point);
         }
-        transform.position = _originalPos + transform.forward * offsetMagnitude;
+      }
+      collectedPoints.Clear();
+      offsetMagnitude = 0;
+      _collider.enabled = false;
     }
 
+    transform.position = _originalPos + transform.forward * offsetMagnitude;
+  }
 
-    void OnTriggerEnter(Collider other)
+
+  void OnTriggerEnter(Collider other)
+  {
+    if (other.CompareTag("Point"))
     {
-        if (other.CompareTag("Point")) {
-            other.GetComponent<Point>().StickToOther(this.gameObject);
-            collectedPoints.Add(other.gameObject);
-        }
+      other.GetComponent<Point>().StickToOther(this.gameObject);
+      collectedPoints.Add(other.gameObject);
     }
+  }
 
 }

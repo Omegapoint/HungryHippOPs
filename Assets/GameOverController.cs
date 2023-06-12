@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,15 @@ public class GameOverController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
+            RemoveAllPoints();
             HippOPsSceneManager.SwitchToLogo();
         }
     }
+
+  private void RemoveAllPoints()
+  {
+    foreach(Point point in FindObjectsOfType<Point>()) {
+        Destroy(point.gameObject);
+    }
+  }
 }
