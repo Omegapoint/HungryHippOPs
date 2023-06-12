@@ -22,6 +22,7 @@ public class HippOPHead : MonoBehaviour
     _originalPos = transform.position.CopyVector();
     _collider = GetComponent<Collider>();
     _controlmap = GetComponentInParent<Controlmap>();
+    _collider.enabled = false;
   }
 
   void Update()
@@ -40,24 +41,26 @@ public class HippOPHead : MonoBehaviour
       if (offsetMagnitude < 0)
       {
         offsetMagnitude = 0;
+        OnBackToBase();
       }
-    }
-    else
-    {
-      if (collectedPoints.Count > 0)
-      {
-        foreach (GameObject point in collectedPoints)
-        {
-          hippOP.IncrementScore();
-          Destroy(point);
-        }
-      }
-      collectedPoints.Clear();
-      offsetMagnitude = 0;
-      _collider.enabled = false;
     }
 
     transform.position = _originalPos + transform.forward * offsetMagnitude;
+  }
+
+  void OnBackToBase()
+  {
+    if (collectedPoints.Count > 0)
+    {
+      foreach (GameObject point in collectedPoints)
+      {
+        hippOP.IncrementScore();
+        Destroy(point);
+      }
+      collectedPoints.Clear();
+    }
+    offsetMagnitude = 0;
+    _collider.enabled = false;
   }
 
 

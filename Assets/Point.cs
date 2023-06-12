@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Point : MonoBehaviour
 {
+  public Material takenMaterial;
   Rigidbody _rigidbody;
   Collider _collider;
   // Start is called before the first frame update
@@ -29,5 +30,6 @@ public class Point : MonoBehaviour
     Destroy(_collider);
     _rigidbody = null;
     transform.parent = other.transform;
+    GetComponent<MeshRenderer>().material = takenMaterial;
   }
 }

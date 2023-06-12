@@ -64,65 +64,65 @@ public class Controlmap : MonoBehaviour
             leftKeyCode: KeyCode.Q, 
             leftKeyCode_alternative: KeyCode.Joystick3Button6, 
             centerKeyCode: KeyCode.W, 
-            centerKeyCode_alternative: KeyCode.Joystick3Button7, 
+            centerKeyCode_alternative: KeyCode.Joystick3Button8, 
             rightKeyCode: KeyCode.E, 
-            rightKeyCode_alternative: KeyCode.Joystick3Button8)
+            rightKeyCode_alternative: KeyCode.Joystick3Button7)
         },
         {1, new KeyMap(
             leftKeyCode: KeyCode.R, 
             leftKeyCode_alternative: KeyCode.Joystick3Button9, 
             centerKeyCode: KeyCode.T, 
-            centerKeyCode_alternative: KeyCode.Joystick3Button10, 
+            centerKeyCode_alternative: KeyCode.Joystick3Button11, 
             rightKeyCode: KeyCode.Y, 
-            rightKeyCode_alternative: KeyCode.Joystick3Button11)
+            rightKeyCode_alternative: KeyCode.Joystick3Button10)
         },
         {2, new KeyMap(
             leftKeyCode: KeyCode.U, 
             leftKeyCode_alternative: KeyCode.Joystick2Button7, 
             centerKeyCode: KeyCode.I, 
-            centerKeyCode_alternative: KeyCode.Joystick2Button6, 
+            centerKeyCode_alternative: KeyCode.Joystick2Button8, 
             rightKeyCode: KeyCode.O, 
-            rightKeyCode_alternative: KeyCode.Joystick2Button8)
+            rightKeyCode_alternative: KeyCode.Joystick2Button6)
         },
         {3, new KeyMap(
             leftKeyCode: KeyCode.A, 
             leftKeyCode_alternative: KeyCode.Joystick2Button4, 
             centerKeyCode: KeyCode.S, 
-            centerKeyCode_alternative: KeyCode.Joystick2Button3, 
+            centerKeyCode_alternative: KeyCode.Joystick2Button5, 
             rightKeyCode: KeyCode.D, 
-            rightKeyCode_alternative: KeyCode.Joystick2Button5)
+            rightKeyCode_alternative: KeyCode.Joystick2Button3)
         },
         {4, new KeyMap(
             leftKeyCode: KeyCode.F, 
             leftKeyCode_alternative: KeyCode.Joystick2Button1, 
             centerKeyCode: KeyCode.G, 
-            centerKeyCode_alternative: KeyCode.Joystick2Button0, 
+            centerKeyCode_alternative: KeyCode.Joystick2Button2, 
             rightKeyCode: KeyCode.H, 
-            rightKeyCode_alternative: KeyCode.Joystick2Button2)
+            rightKeyCode_alternative: KeyCode.Joystick2Button0)
         },
         {5, new KeyMap(
             leftKeyCode: KeyCode.J, 
             leftKeyCode_alternative: KeyCode.Joystick1Button1, 
             centerKeyCode: KeyCode.K, 
-            centerKeyCode_alternative: KeyCode.Joystick1Button0, 
+            centerKeyCode_alternative: KeyCode.Joystick1Button2, 
             rightKeyCode: KeyCode.L, 
-            rightKeyCode_alternative: KeyCode.Joystick1Button2)
+            rightKeyCode_alternative: KeyCode.Joystick1Button0)
         },
         {6, new KeyMap(
             leftKeyCode: KeyCode.Z, 
             leftKeyCode_alternative: KeyCode.Joystick1Button3, 
             centerKeyCode: KeyCode.X, 
-            centerKeyCode_alternative: KeyCode.Joystick1Button4, 
+            centerKeyCode_alternative: KeyCode.Joystick1Button5, 
             rightKeyCode: KeyCode.C, 
-            rightKeyCode_alternative: KeyCode.Joystick1Button5)
+            rightKeyCode_alternative: KeyCode.Joystick1Button4)
         },
         {7, new KeyMap(
             leftKeyCode: KeyCode.V, 
             leftKeyCode_alternative: KeyCode.Joystick3Button3, 
             centerKeyCode: KeyCode.B, 
-            centerKeyCode_alternative: KeyCode.Joystick3Button4, 
+            centerKeyCode_alternative: KeyCode.Joystick3Button5, 
             rightKeyCode: KeyCode.N, 
-            rightKeyCode_alternative: KeyCode.Joystick3Button5)
+            rightKeyCode_alternative: KeyCode.Joystick3Button4)
         },
     };
 }
