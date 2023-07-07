@@ -62,19 +62,19 @@ public class Controlmap : MonoBehaviour
   private static readonly Dictionary<int, KeyMap> KEY_MAPPINGS = new Dictionary<int, KeyMap> {
         {0, new KeyMap(
             leftKeyCode: KeyCode.Q, 
-            leftKeyCode_alternative: KeyCode.Joystick3Button6, 
+            leftKeyCode_alternative: KeyCode.Joystick3Button0, 
             centerKeyCode: KeyCode.W, 
-            centerKeyCode_alternative: KeyCode.Joystick3Button8, 
+            centerKeyCode_alternative: KeyCode.Joystick3Button6, 
             rightKeyCode: KeyCode.E, 
-            rightKeyCode_alternative: KeyCode.Joystick3Button7)
+            rightKeyCode_alternative: KeyCode.Joystick3Button1)
         },
         {1, new KeyMap(
             leftKeyCode: KeyCode.R, 
-            leftKeyCode_alternative: KeyCode.Joystick3Button9, 
+            leftKeyCode_alternative: KeyCode.Joystick3Button7, 
             centerKeyCode: KeyCode.T, 
-            centerKeyCode_alternative: KeyCode.Joystick3Button11, 
+            centerKeyCode_alternative: KeyCode.Joystick3Button10, 
             rightKeyCode: KeyCode.Y, 
-            rightKeyCode_alternative: KeyCode.Joystick3Button10)
+            rightKeyCode_alternative: KeyCode.Joystick3Button9)
         },
         {2, new KeyMap(
             leftKeyCode: KeyCode.U, 
@@ -94,7 +94,7 @@ public class Controlmap : MonoBehaviour
         },
         {4, new KeyMap(
             leftKeyCode: KeyCode.F, 
-            leftKeyCode_alternative: KeyCode.Joystick2Button1, 
+            leftKeyCode_alternative: KeyCode.Joystick2Button1,
             centerKeyCode: KeyCode.G, 
             centerKeyCode_alternative: KeyCode.Joystick2Button2, 
             rightKeyCode: KeyCode.H, 
@@ -118,7 +118,7 @@ public class Controlmap : MonoBehaviour
         },
         {7, new KeyMap(
             leftKeyCode: KeyCode.V, 
-            leftKeyCode_alternative: KeyCode.Joystick3Button3, 
+            leftKeyCode_alternative: KeyCode.Joystick3Button2, 
             centerKeyCode: KeyCode.B, 
             centerKeyCode_alternative: KeyCode.Joystick3Button5, 
             rightKeyCode: KeyCode.N, 
